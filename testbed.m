@@ -113,6 +113,9 @@ function testbed( aut_handle_list, problem_fname, options_list)
 % All rights reserved
 %
 
+%% add my path
+addpath( fileparts(mfilename('fullpath')));
+
 %% make sure input lists are cells
 if ~iscell(aut_handle_list)
     aut_handle_list = {aut_handle_list};
