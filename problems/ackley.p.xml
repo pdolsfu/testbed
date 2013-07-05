@@ -1,0 +1,29 @@
+<problem>
+<name> Ackley </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> CL </signature>
+<lower_bound> -30*ones(1,2) </lower_bound>
+<upper_bound> 30*ones(1,2) </upper_bound>
+<min_point>  [0 0] </min_point>
+<min_value>  0  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> symmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> largescale </category>
+<category> go </category>
+<function> % The number of variables n: n = 2. </function>
+<function> % Optimization Space: xi = [-30 30]</function>
+<function> % Optimum is 0 (Minimum) at x* = [0 0]</function>
+<function> n = 2; </function>
+<function> a = 20; b = 0.2; c = 2*pi; </function>
+<function> s1 = 0; s2 = 0; </function>
+<function> for i=1:n; </function>
+<function> s1 = s1+x(i,:).^2; </function>
+<function> s2 = s2+cos(c*x(i,:)); </function>
+<function> end </function>
+<function> f = -a*exp(-b*sqrt(1/n*s1))-exp(1/n*s2)+a+exp(1); </function>
+</problem>

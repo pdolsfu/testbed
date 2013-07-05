@@ -1,0 +1,22 @@
+<problem>
+<name> Hump </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> BT </signature>
+<lower_bound> -5*ones(1,2) </lower_bound>
+<upper_bound> 5*ones(1,2) </upper_bound>
+<min_point>  [0.08983 -0.7126]  </min_point>
+<min_value>  -1.0316  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> symmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The number of variables n = 2. </function>
+<function> % Optimization space is: x1,x2 = [-5 5] </function>
+<function> % Optimum is -1.0316 at x* = [0.08983 -0.7126], [-0.08983 0.7126] </function>
+<function> f= 4*x(1,:).^2-2.1*x(1,:).^4+x(1,:).^6/3+x(1,:).*x(2,:)-4*x(2,:).^2+4*x(2,:).^4; </function>
+</problem>

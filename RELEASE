@@ -1,0 +1,9 @@
+Product Design and Optimization Laboratory (PDOL) Optimization Testbed
+
+v1.0
+	this is the first official release
+	documentation is written in Matlab help and calltest.m demo
+	known issues:
+		not working reliably with constrained problems
+		limited control over post-processing
+		limited option for MOO in post-processing

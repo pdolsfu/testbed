@@ -1,0 +1,40 @@
+<problem>
+<name> CF3 </name>
+<description> </description>
+<n_variables> 3 </n_variables>
+<n_objectives> 2 </n_objectives>
+<signature> BU </signature>
+<lower_bound> [0 -2 -2] </lower_bound>
+<upper_bound> [1 2 2] </upper_bound>
+<min_point> </min_point>
+<min_value> </min_value>
+<constraint> [dim, num]  = size(x); </constraint>
+<constraint> t           = x(2,:) - sin(6.0*pi*x(1,:)+2.0*pi/dim) - 0.5*x(1,:) + 0.25; </constraint>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c = [- sign(t).*abs(t)./(1.0+exp(4.0*abs(t)))]; </constraint>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<constraint> clear tmp index1 index2; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> singlemodal </category>
+<category> constrained </category>
+<category> largescale </category>
+<category> moo </category>
+<function> % n, [0 1], [-2 2]^n-1 </function>
+<function> % x and f are columnwise, the imput x must be inside the search space and </function>
+<function> % it could be a matrix </function>
+<function> [dim, num]  = size(x); </function>
+<function> tmp         = zeros(dim,num); </function>
+<function> tmp(2:dim,:)= x(2:dim,:) - sin(6.0*pi*repmat(x(1,:),[dim-1,1]) + pi/dim*repmat((2:dim)',[1,num])); </function>
+<function> tmp1        = sum(tmp(3:2:dim,:).^2);  % odd index </function>
+<function> tmp2        = sum(tmp(4:2:dim,:).^2);  % even index </function>
+<function> index1      = (1.5-0.75*sqrt(2.0)) > tmp(2,:); </function>
+<function> index2      = tmp(2,:)>= (1.5-0.75*sqrt(2.0)); </function>
+<function> tmp(2,index1) = abs(tmp(2,index1)); </function>
+<function> tmp(2,index2) = 0.125 + (tmp(2,index2)-1.0).^2; </function>
+<function> f1      = x(1,:)                  + tmp1; </function>
+<function> f2      = 1.0 - x(1,:) + tmp(2,:) + tmp2; </function>
+<function> f=[f1' f2']; </function>
+</problem>

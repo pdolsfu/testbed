@@ -1,0 +1,20 @@
+<problem>
+<name> Banana </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> AS </signature>
+<lower_bound> -2*ones(1,2) </lower_bound>
+<upper_bound> 2*ones(1,2) </upper_bound>
+<min_point> 1 1 </min_point>
+<min_value> 0 </min_value>
+<category> continuous </category>
+<category> symmetric </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The number of variables n = 2. </function>
+<function> % Optimization space: x1,x2 = [-2 2] </function>
+<function> % Optimum is 0 (Minimum) at x* = [1 1] </function>
+<function> f=100*(x(2,:)-x(1,:).^2).^2+(1-x(1,:)).^2; </function>
+</problem>

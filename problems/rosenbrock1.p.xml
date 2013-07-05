@@ -1,0 +1,29 @@
+<problem>
+<name> Rosenbrock1 </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> GZ </signature>
+<lower_bound> -10*ones(1,2) </lower_bound>
+<upper_bound> 10*ones(1,2) </upper_bound>
+<min_point>  [1 1]  </min_point>
+<min_value>  0  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The number of variables n should be adjusted below. </function>
+<function> % The default value of n = 2. </function>
+<function> % Optimization Space is: xj = [-10 10], j = 1,...,n </function>
+<function> % Optimum is 0 (Minimum) at x* = [1 1] </function>
+<function> % </function>
+<function> n = 2; </function>
+<function> sum = 0; </function>
+<function> for j = 1:n-1; </function>
+<function> sum = sum+100*(x(j,:).^2-x(j+1)).^2+(x(j,:)-1).^2; </function>
+<function> end </function>
+<function> f = sum; </function>
+</problem>

@@ -1,0 +1,31 @@
+<problem>
+<name> Powell </name>
+<description> </description>
+<n_variables> 24 </n_variables>
+<n_objectives> </n_objectives>
+<signature> PV </signature>
+<lower_bound> -4*ones(1,24) </lower_bound>
+<upper_bound> 5*ones(1,24) </upper_bound>
+<min_point>  [0*ones(1,24)]  </min_point>
+<min_value>  0  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The number of variables n: n = 24. </function>
+<function> % Optimization Space is: xi = [-4 5], i = 1,...,n </function>
+<function> % Optimum is 0 (Minimum) at x* = [0*ones(1,2)] </function>
+<function> n = 24; </function>
+<function> m = n; </function>
+<function> for i = 1:m/4 </function>
+<function> fvec(4*i-3) = x(4*i-3)+10.*(x(4*i-2)); </function>
+<function> fvec(4*i-2) = sqrt(5).*(x(4*i-1)-x(4*i)); </function>
+<function> fvec(4*i-1) = (x(4*i-2)-2.*(x(4*i-1))).^2; </function>
+<function> fvec(4*i)   = sqrt(10).*(x(4*i-3)-x(4*i)).^2; </function>
+<function> end; </function>
+<function> fvec = fvec'; </function>
+<function> f = norm(fvec).^2; </function>
+</problem>

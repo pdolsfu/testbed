@@ -1,0 +1,56 @@
+====================| Using Your New Optimization Algorithm	|====================
+
+Thank you for using the PDOL Optimization Testbed Algorithm Benchmarking System. This Testbed contains over 50 widely used optimization problems stored in XML file form, and documents your algorithm's performance on a test problem in the form of histograms, boxplots, and convergence plots. 
+
+
+
+----------|(i)	A Few Notes Before Beginning	|----------
+More details on the following be found in a commented block of testbed.m:
+
+1. The algorithm must be packaged in a function that can be called with the above parameters, as oppose to a script where the script itself has to be modified in any way
+	- The "above parameters" are described in more depth below. 
+
+2. The algorithm must NOT issue "clear all" command at any time.
+
+3. This Testbed has been tested with Genetic Algorithm and Simulated Annealing (part of MatLab's Global Optimization Toolbox), so a similar argument structure will make configuring 'options' (Section (iii)) easier.
+
+
+
+----------|(ii)	Calling the Testbed	|----------
+1. Make sure that all the Testbed files and all the files for your optimization algorithm are added to MatLab's path.
+
+2. Calling the Testbed looks something like this:
+
+	testbed_single(@YOUR_ALGORITHM_NAME, 'TEST_FUNCTION_OF_CHOICE', options)
+
+3. @YOUR_ALGORITHM_NAME is the handle for the algorithm which you would like to test. YOUR_ALGORITHM_NAME should be the main file (YOUR_ALGORITHM_NAME.m) for your algorithm, a function that takes in parameters described below. 
+
+4. Your TEST_FUNCTION_OF_CHOICE will be one of the problems chosen from the Testbed's collection of .xml files. Only include the file name that comes before '.p'. See calltest.m for a demo.
+
+5. The next section will explain how to configure the 'options' object.
+
+
+
+----------|(iii) Configuring the 'options' Object 	|----------
+1. Editing options.arg_list
+	- 'options.arg_list' is a cell array that contains the arguments you would pass into your optimization algorithm. Instead of the actual values, you would pass in handles. In other words, if your algorithm requires:
+		-- The number of variables			-	use ctg.arg_n_variables
+		-- The test function handle			- 	use ctg.arg_objfun_handle
+		-- The test function lower bound	-	use ctg.arg_lower_bound
+		-- The test function upper bound 	- 	use ctg.arg_upper_bound
+		-- Upper/lower bounds in a matrix 	-	use ctg.arg_bound_matrix
+			Note: use_row_bound (below) will determine the orientation of this matrix
+		-- Constraint functions				-	use ctg.arg_confun_handle.
+			Note: The constraint functions should be returned in the form of vectors C (inequality, <=0) and Ceq (equality, = 0) for ctg.arg_confun_handle to work properly.
+	- Any of the above can appear in a structure, and the Testbed will accept it as well. 
+	- In addition to the above, you can include arguments that are specific to your optimization algorithm.
+
+2. Editing the rest of the 'options' object
+	- The most essential attrbiutes of 'object' are listed here. The rest of the attributes, as described in testbed.m and testbed_single.m, can be left to the default values without hindering performance.
+	- Rows vs. Columns
+		-- 'options.use_row_point' and 'options.use_row_bound' determine if the Testbed interprets the points and bounds (respectively) as rows (set to 1) or columns (set to 0). For example, if your optimization algorithm takes row points and column bounds, you would set:
+			use_row_point = 1;
+			use_row_bound = 0;
+	- Number of Runs and Maximum Number of Samples
+		-- 'options.n_runs' determines how many times Testbed runs your optimization algorithm
+		-- 'options.max_n_samples' determines the maximum number of points your optimization algorithm can evaluate in one run

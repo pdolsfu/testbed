@@ -1,0 +1,38 @@
+<problem>
+<name> G12 </name>
+<description> </description>
+<n_variables> 3 </n_variables>
+<n_objectives> </n_objectives>
+<signature> OB </signature>
+<lower_bound> 0*ones(1,3) </lower_bound>
+<upper_bound> 10*ones(1,3) </upper_bound>
+<min_point>  [5 5 5]  </min_point>
+<min_value>  1  </min_value>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> for p=1:9 </constraint>
+<constraint> for q=1:9 </constraint>
+<constraint> for r=1:9 </constraint>
+<constraint> z(p,q,r) = (x(1)-p)^2+(x(2)-q)^2+(x(3)-r)^2-0.0625; </constraint>
+<constraint> end </constraint>
+<constraint> end </constraint>
+<constraint> end </constraint>
+<constraint> for p=1:9 </constraint>
+<constraint> for q=1:9 </constraint>
+<constraint> Z1(p,q) = min(z(p,q,:)); </constraint>
+<constraint> end </constraint>
+<constraint> Z2(p) = min(Z1(p,:)); </constraint>
+<constraint> end </constraint>
+<constraint> y = min(Z2); </constraint>
+<constraint> c=[y]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> largescale </category>
+<category> go </category>
+<function> % Optimum is 1 (Minimum) at x* = [5 5 5] </function>
+<function> f=1-0.01*((x(1,:)-5).^2+(x(2,:)-5).^2+(x(3,:)-5).^2); </function>
+</problem>

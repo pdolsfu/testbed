@@ -1,0 +1,20 @@
+<template>
+<line> function f_list = objfun( x_list) </line>
+<line> % Generated objective function testbed system </line>
+<line>  </line>
+<line> x_list = x_list'; </line>
+<line> for x_list_cnt = size(x_list, 2):-1:1 </line>
+<line> x = x_list(:,x_list_cnt); </line>
+<line> % calculations </line>
+<line> <content> </content> </line>
+<line>  </line>
+<line> % logging </line>
+<line> dman( ctg.option_log, ctg.id_obj_t, ones(1,size(x,2))* ... </line>
+<line>     toc( uint64( dman( ctg.option_harvest, ctg.id_obj_tic)))); </line>
+<line> dman( ctg.option_log, ctg.id_obj_x, x); </line>
+<line> dman( ctg.option_log, ctg.id_obj_f, f); </line>
+<line> </line>
+<line> f_list(:,x_list_cnt) = f; </line>
+<line> end </line>
+<line> end </line>
+</template>

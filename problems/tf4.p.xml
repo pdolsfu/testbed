@@ -1,0 +1,28 @@
+<problem>
+<name> TF4 </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> 2 </n_objectives>
+<signature> BJ </signature>
+<lower_bound> [.4 2] </lower_bound>
+<upper_bound> [1.6 5] </upper_bound>
+<min_point> </min_point>
+<min_value> </min_value>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c=[x(1)-1.6; 0.4-x(1); x(2)-5;2-x(2)]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> smallscale </category>
+<category> moo </category>
+<function> % following parameters are shared by some of functions </function>
+<function> [m n]=size(x); </function>
+<function> constant=ones(1,n); </function>
+<function> % test problem 1 (optimization space: xlv=[.4 2], xuv = [1.6 5] </function>
+<function> f1=(x(1,:)-2.*constant).^2+(x(2,:)-constant).^2; </function>
+<function> f2=x(1,:).^2+(x(2,:)-6.*constant).^2; </function>
+<function> f=[f1' f2']; </function>

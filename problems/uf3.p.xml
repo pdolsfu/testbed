@@ -1,0 +1,32 @@
+<problem>
+<name> UF3 </name>
+<description> </description>
+<n_variables> 3 </n_variables>
+<n_objectives> 2 </n_objectives>
+<signature> IR </signature>
+<lower_bound> [0 -2 -2] </lower_bound>
+<upper_bound> [1 2 2] </upper_bound>
+<min_point> </min_point>
+<min_value> </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> largescale </category>
+<category> moo </category>
+<function> % x and f are columnwise, the input x must be inside the search space and </function>
+<function> % it could be a matrix </function>
+<function> %n=3, xlv=[0 -2 -2], xuv=[1 2 2] </function>
+<function> [dim, num]  = size(x); </function>
+<function> Y           = zeros(dim,num); </function>
+<function> Y(2:dim,:)  = x(2:dim,:) - sin(6.0*pi*repmat(x(1,:),[dim-1,1]) + pi/dim*repmat((2:dim)',[1,num])); </function>
+<function> H           = zeros(dim,num); </function>
+<function> H(2:dim,:)  = abs(Y(2:dim,:))./(1.0+exp(2.0*abs(Y(2:dim,:)))); </function>
+<function> tmp1        = sum(H(3:2:dim,:));  % odd index </function>
+<function> tmp2        = sum(H(2:2:dim,:));  % even index </function>
+<function> f1      = x(1,:)          + 2.0*tmp1/size(3:2:dim,2); </function>
+<function> f2      = 1.0 - x(1,:).^2 + 2.0*tmp2/size(2:2:dim,2); </function>
+<function> f=[f1' f2']; </function>
+<function> clear Y H; </function>
+</problem>

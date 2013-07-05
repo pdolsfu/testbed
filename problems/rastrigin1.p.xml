@@ -1,0 +1,26 @@
+<problem>
+<name> Rastrigin1 </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> DB </signature>
+<lower_bound> -5.12*ones(1,2) </lower_bound>
+<upper_bound> 5.12*ones(1,2) </upper_bound>
+<min_point>  [0 0]  </min_point>
+<min_value>  0  </min_value>
+<category> largescale </category>
+<category> multimodal </category>
+<category> go </category>
+<category> unconstrained </category>
+<category> continuous </category>
+<function> % The number of variables n: n = 2. </function>
+<function> % Optimization Space is: xj = [-5.12 5.12], j = 1,2 </function>
+<function> % Optimum is 0 (Minimum) at x* = [0 0] </function>
+<function> % </function>
+<function> n = 2; </function>
+<function> s = 0; </function>
+<function> for j = 1:n </function>
+<function> s = s+(x(j)^2-10*cos(2*pi*x(j))); </function>
+<function> end </function>
+<function> f = 10*n+s; </function>
+</problem>

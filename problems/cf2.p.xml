@@ -1,0 +1,49 @@
+<problem>
+<name> CF2 </name>
+<description> </description>
+<n_variables> 3 </n_variables>
+<n_objectives> 2 </n_objectives>
+<signature> F5 </signature>
+<lower_bound> [0 -1 -1] </lower_bound>
+<upper_bound> [1 1 1] </upper_bound>
+<min_point> </min_point>
+<min_value> </min_value>
+<constraint> a           = 1.0; </constraint>
+<constraint> N           = 2.0; </constraint>
+<constraint> [dim, num]  = size(x); </constraint>
+<constraint> tmp         = zeros(dim,num); </constraint>
+<constraint> tmp(2:dim,:)= (x(2:dim,:) - sin(6.0*pi*repmat(x(1,:),[dim-1,1]) + pi/dim*repmat((2:dim)',[1,num]))).^2; </constraint>
+<constraint> tmp1        = sum(tmp(3:2:dim,:));  % odd index </constraint>
+<constraint> tmp(2:dim,:)= (x(2:dim,:) - cos(6.0*pi*repmat(x(1,:),[dim-1,1]) + pi/dim*repmat((2:dim)',[1,num]))).^2; </constraint>
+<constraint> tmp2        = sum(tmp(2:2:dim,:));  % even index </constraint>
+<constraint> f1      = x(1,:)             + 2.0*tmp1/size(3:2:dim,2); </constraint>
+<constraint> f2      = 1.0 - sqrt(x(1,:)) + 2.0*tmp2/size(2:2:dim,2); </constraint>
+<constraint> f=[f1; f2]; </constraint>
+<constraint> t           = f2 + sqrt(f1) - a*sin(N*pi*(sqrt(f1)-f2+1.0)) - 1.0; </constraint>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c=[- sign(t).*abs(t)./(1.0+exp(4.0*abs(t)))]; </constraint>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<constraint> clear temp </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> largescale </category>
+<category> moo </category>
+<function> % n, [0 1], [-1 1]^n-1 </function>
+<function> % x and f are columnwise, the imput x must be inside the search space and </function>
+<function> % it could be a matrix </function>
+<function> a           = 1.0; </function>
+<function> N           = 2.0; </function>
+<function> [dim, num]  = size(x); </function>
+<function> tmp         = zeros(dim,num); </function>
+<function> tmp(2:dim,:)= (x(2:dim,:) - sin(6.0*pi*repmat(x(1,:),[dim-1,1]) + pi/dim*repmat((2:dim)',[1,num]))).^2; </function>
+<function> tmp1        = sum(tmp(3:2:dim,:));  % odd index </function>
+<function> tmp(2:dim,:)= (x(2:dim,:) - cos(6.0*pi*repmat(x(1,:),[dim-1,1]) + pi/dim*repmat((2:dim)',[1,num]))).^2; </function>
+<function> tmp2        = sum(tmp(2:2:dim,:));  % even index </function>
+<function> f1      = x(1,:)             + 2.0*tmp1/size(3:2:dim,2); </function>
+<function> f2      = 1.0 - sqrt(x(1,:)) + 2.0*tmp2/size(2:2:dim,2); </function>
+<function> f=[f1' f2']; </function>
+</problem>

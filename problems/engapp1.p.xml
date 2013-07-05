@@ -1,0 +1,25 @@
+<problem>
+<name> ENGAPP1 </name>
+<description> </description>
+<n_variables> 3 </n_variables>
+<n_objectives> </n_objectives>
+<signature> GD </signature>
+<lower_bound> 0*ones(1,3) </lower_bound>
+<upper_bound> 100*ones(1,3) </upper_bound>
+<min_point>  [0.051989 0.363965 10.890522]  </min_point>
+<min_value>  0.012681  </min_value>
+<constraint> %Tension-Compresion String </constraint>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c=[1-(x(2).^3*x(3))/(71785.*x(1).^4); (4.*x(2).^2-x(1).*x(2))/(12566*x(1).^3*(x(2)-x(1)))+1/(5108.*x(1).^2)-1; 1-140.45.*x(1)/(x(3).*x(2).^2); (x(1)+x(2))/1.5-1]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % Optimum is 0.012681 (Minimum) at x* = [0.051989 0.363965 10.890522] </function>
+<function> f=x(1,:).^2.*x(2,:).*(x(3,:)+2); </function>
+</problem>

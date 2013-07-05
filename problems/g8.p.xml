@@ -1,0 +1,24 @@
+<problem>
+<name> G8 </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> H9 </signature>
+<lower_bound> 0*ones(1,2) </lower_bound>
+<upper_bound> 10*ones(1,2) </upper_bound>
+<min_point>  [1.2279713 4.2453733]  </min_point>
+<min_value>  -0.095825  </min_value>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c=[x(1).^2-x(2)+1; 1-x(1)+(x(2)-4).^2]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % Optimum is -0.095825 (Minimum) at x* = [1.2279713 4.2453733] </function>
+<function> f = -(sin(2.*pi.*x(1,:)).^3.*sin(2.*pi.*x(2,:)))./(x(1,:).^3.*(x(1,:)+x(2,:))); </function>
+</problem>

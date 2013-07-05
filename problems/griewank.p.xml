@@ -1,0 +1,22 @@
+<problem>
+<name> Griewank </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> BY </signature>
+<lower_bound> -100*ones(1,2) </lower_bound>
+<upper_bound> 100*ones(1,2) </upper_bound>
+<min_point>  [0 0]  </min_point>
+<min_value>  0  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> symmetric </category>
+<category> singlemodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % n=2, x=[-100 100] </function>
+<function> % Optimization Space is: x1 = [-100 100], x2 = [-100 100] </function>
+<function> % Optimum is 0 (Minimum) at x* = [0 0] </function>
+<function> f=x(1,:).^2/2000+x(2,:).^2/2000-(cos(x(1,:)/sqrt(1))).*(cos(x(2,:)/sqrt(2)))+1; </function>
+</problem>

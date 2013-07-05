@@ -1,0 +1,29 @@
+<problem>
+<name> G7 </name>
+<description> </description>
+<n_variables> 10 </n_variables>
+<n_objectives> </n_objectives>
+<signature> MS </signature>
+<lower_bound> -10*ones(1,10) </lower_bound>
+<upper_bound> 10*ones(1,10) </upper_bound>
+<min_point>  [2.171996 2.363683 8.773926 5.095984 0.9906548 1.430574 1.321644 9.828726 8.280092 8.375927]  </min_point>
+<min_value>  24.3062091  </min_value>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c=[4*x(1)+5*x(2)-3*x(7)+9*x(8)-105; 10*x(1)-8*x(2)-17*x(7)+2*x(8);... </constraint>
+<constraint> -8*x(1)+2*x(2)+5*x(9)-2*x(10)-12; 3*(x(1)-2)^2+4*(x(2)-3)^2+2*x(3)^2-7*x(4)-120;... </constraint>
+<constraint> 5*x(1)^2+8*x(2)+(x(3)-6)^2-2*x(4)-40; 0.5*(x(1)-8)^2+2*(x(2)-4)^2+3*x(5)^2-x(6)-30;... </constraint>
+<constraint> x(1)^2+2*(x(2)-2)^2-2*x(1)*x(2)+14*x(5)-6*x(6); -3*x(1)+6*x(2)+12*(x(9)-8)^2-7*x(10)]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % Optimum is 24.3062091 (Minimum) at x* = [2.171996 2.363683 8.773926 5.095984 0.9906548 1.430574 1.321644 9.828726 8.280092 8.375927] </function>
+<function> f=x(1,:).^2+x(2,:).^2+x(1,:).*x(2)-14*x(1,:)-16*x(2,:)+(x(3,:)-10).^2+... </function>
+<function> 4*(x(4,:)-5).^2+(x(5,:)-3).^2+2*(x(6,:)-1).^2+5*x(7,:).^2+... </function>
+<function> 7*(x(8,:)-11).^2+2*(x(9,:)-10).^2+(x(10,:)-7).^2+45; </function>
+</problem>

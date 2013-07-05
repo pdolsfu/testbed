@@ -1,0 +1,23 @@
+<problem>
+<name> F1 </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> HC </signature>
+<lower_bound> -1*ones(1,2) </lower_bound>
+<upper_bound> 1*ones(1,2) </upper_bound>
+<min_point>  [0 0]  </min_point>
+<min_value>  -2  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The default value of n = 2. </function>
+<function> % Optimization space is xi = [-1 1], i = 1..2 </function>
+<function> % Optimum is -2 (minimum) at x* = [0 0] </function>
+<function> % </function>
+<function> f = x(1,:).^2 + x(2,:).^2 - cos(18*x(1,:)) - cos(18*x(2,:)); </function>
+</problem>

@@ -1,0 +1,34 @@
+<problem>
+<name> F5 </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> DJ </signature>
+<lower_bound> -65.536*ones(1,2) </lower_bound>
+<upper_bound> 65.536*ones(1,2) </upper_bound>
+<min_point>  [-32 -32]  </min_point>
+<min_value>  0.998004  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The default value of n = 2. </function>
+<function> % Optimization space is xi = [-65.536 65.536], i = 1,2 </function>
+<function> % Optimum is 0.998004 (Minimum) at x* = [-32 -32] </function>
+<function> % </function>
+<function> a = [-32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 -32 -16 0 16 32 ; -32 -32 -32 -32 -32 -16 -16 -16 -16 -16 0 0 0 0 0 16 16 16 16 16 32 32 32 32 32]; </function>
+<function> sj = 0; </function>
+<function> for j = 1:25; </function>
+<function> si = 0; </function>
+<function> for i = 1:2; </function>
+<function> si = si + (x(i) - a(i,j)).^6; </function>
+<function> end; </function>
+<function> t = (j + si)^(-1); </function>
+<function> sj = sj + t; </function>
+<function> end </function>
+<function> f = 0.002 + sj; </function>
+<function> f = f^(-1); </function>
+</problem>

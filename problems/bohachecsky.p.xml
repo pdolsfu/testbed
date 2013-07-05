@@ -1,0 +1,23 @@
+<problem>
+<name> Bohachecsky </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> KU </signature>
+<lower_bound> -50*ones(1,2) </lower_bound>
+<upper_bound> 50*ones(1,2) </upper_bound>
+<min_point>  [0 0]  </min_point>
+<min_value>  0  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> symmetric </category>
+<category> singlemodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The number of variables n = 2. </function>
+<function> % Optimization space: x1,x2 = [-50 50] </function>
+<function> % Optimum is: 0 (Minimum) at x* = [0 0] </function>
+<function> % </function>
+<function> f=x(1,:).^2+2*x(2,:).^2-0.3*cos(3*pi*x(1,:))-0.4*cos(4*pi*x(2,:))+0.7; </function>
+</problem>

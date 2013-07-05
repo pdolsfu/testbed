@@ -1,0 +1,34 @@
+Copyright Notice of PDOL Optimization Testbed
+
+Copyright (c) 2013
+Product Design and Optimization Laboratory (PDOL) Simon Fraser University
+All rights reserved
+
+Product Design and Optimization Laboratory (PDOL) hereby claims copyright on the following files:
+	testbed.m
+	testbed_single.m
+	pman.m
+	dman.m
+	pproc.m
+	ctg.m
+	calltest.m
+	LICENSE
+	COPYRIGHT
+	RELEASE
+and every file in "templates" folder and "misc" folder. PDOL also claims copyright on the XML field structure in which the files in "problems" folder are written.
+
+The contents of the files in "problems" folder come from public resources. PDOL does not claim copyright on them.
+
+The files in "xmltree" folder is a seperate utility package developed by Guillaume Flandin and released under GPL. PDOL Optimization Testbed makes use of it unmodified as a XML parser utility and PDOL acknowledges Guillaume Flandin for the support.
+
+The files in "CalcMD5" folder is a separate utility package developed by Jan Simon and released under BSD. PDOL Optimization Testbed makes use of it unmodified as a MD5 checksum calculator utility and PDOL acknowledges Jan Simon for the support
+
+The files in "displaytable" folder is a separate utility package developed by Richard Crozier and released under BSD. PDOL Optimization Testbed makes use of it unmodified as a table formater utility and PDOL acknowledges Richard Crozier for the support
+
+The files in "histNorm" folder is a separate utility package developed by Travis Kuspche and released under BSD. PDOL Optimization Testbed makes use of it with minor modification as a histogram plotter utility and PDOL acknowledges Travis Kuspche for the support
+
+The files in "xticklabel_rotate" folder is a separate utility package developed by Brian FG Kats and released under BSD. PDOL Optimization Testbed makes use of it with minor modification as a plotter beautifier utility and PDOL acknowledges Brian FG Kats for the support
+
+The files in "boxplotCsub" folder is a separate utility package developed by Brian FG Kats and released under BSD. PDOL Optimization Testbed makes use of it unmodified as a box plotter utility and PDOL acknowledges Brian FG Kats for the support
+
+The files in "MPS" folder is a seperate package developed by PDOL. PDOL Optimization Testbed makes use of it unmodified as an example algorithm for benchmarking for demonstrative purposes. The MPS package distributed in PDOL Optimization Testbed retains its own copyright, license and terms of use.

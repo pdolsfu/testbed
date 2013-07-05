@@ -1,0 +1,28 @@
+<problem>
+<name> G9 </name>
+<description> </description>
+<n_variables> 7 </n_variables>
+<n_objectives> </n_objectives>
+<signature> AQ </signature>
+<lower_bound> -10*ones(1,7) </lower_bound>
+<upper_bound> 10*ones(1,7) </upper_bound>
+<min_point>  [2.330499 1.951372 -0.4775414 4.365726 -0.6244870 1.038131 1.594227]  </min_point>
+<min_value>  680.6300573  </min_value>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> v1 = 2*x(1)^2; </constraint>
+<constraint> v2 = x(2)^2; </constraint>
+<constraint> c=[ v1+3*v2^2+x(3)+4*x(4)^2+5*x(5)-127; 7*x(1)+3*x(2)+10*x(3)^2+x(4)-x(5)-282;... </constraint>
+<constraint> 23*x(1)+v2+6*x(6)^2-8*x(7)-196; 2*v1+v2-3*x(1)*x(2)+2*x(3)^2+5*x(6)-11*x(7)]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> largescale </category>
+<category> go </category>
+<function> % Optimum is 680.6300573 (Minimum) at x* = [2.330499 1.951372 -0.4775414 4.365726 -0.6244870 1.038131 1.594227] </function>
+<function> f=(x(1,:)-10).^2+5*(x(2,:)-12).^2+x(3,:).^4+3*(x(4,:)-11).^2+... </function>
+<function> 10*x(5,:).^6+7*x(6,:).^2+x(7).^4-4*x(6,:).*x(7,:)-10*x(6,:)-8*x(7,:); </function>
+</problem>

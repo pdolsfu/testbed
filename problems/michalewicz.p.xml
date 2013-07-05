@@ -1,0 +1,28 @@
+<problem>
+<name> Michalewicz </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> JH </signature>
+<lower_bound> -0*ones(1,2) </lower_bound>
+<upper_bound> 3.14*ones(1,2) </upper_bound>
+<min_point>  [2.20319 1.57049]  </min_point>
+<min_value>  -1.8013  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> symmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The number of variables n: n = 2. </function>
+<function> % Optimization Space is: x1,x2 = [0 pi] </function>
+<function> % Optimum is -1.8013 (Minimum), x* = [2.20319 1.57049] </function>
+<function> n = 2; </function>
+<function> m = 10; </function>
+<function> s = 0; </function>
+<function> for i = 1:n; </function>
+<function> s = s+sin(x(i,:))*(sin(i*x(i,:).^2/pi)).^(2*m); </function>
+<function> end </function>
+<function> f = -s; </function>
+</problem>

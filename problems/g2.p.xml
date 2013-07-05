@@ -1,0 +1,28 @@
+<problem>
+<name> G2 </name>
+<description> </description>
+<n_variables> 20 </n_variables>
+<n_objectives> </n_objectives>
+<signature> MX </signature>
+<lower_bound> 0*ones(1,20) </lower_bound>
+<upper_bound> 10*ones(1,20) </upper_bound>
+<min_point>  Inf*ones(1,20)  </min_point>
+<min_value>  -0.803619  </min_value>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> n = 20; </constraint>
+<constraint> c=[-prod(x)+0.75; sum(x)-7.5.*n]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> largescale </category>
+<category> go </category>
+<function> % Optimum is -0.803619 (Minimum), x* [unknown], n = 20 </function>
+<function> n = 20; </function>
+<function> sum_jx = 0; </function>
+<function> for j=1:n; sum_jx = sum_jx+j.*x(j,:).^2; end </function>
+<function> f = -abs((sum(cos(x).^4)-2.*prod(cos(x).^2))./sqrt(sum_jx)); </function>
+</problem>

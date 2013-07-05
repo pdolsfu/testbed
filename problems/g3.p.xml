@@ -1,0 +1,25 @@
+<problem>
+<name> G3 </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> AT </signature>
+<lower_bound> 0*ones(1,2) </lower_bound>
+<upper_bound> 1*ones(1,2) </upper_bound>
+<min_point>  [(sqrt(2).^-1)*ones(1,2)]  </min_point>
+<min_value>  -1  </min_value>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c=[]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[abs(sum(x.^2)-1)]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> largescale </category>
+<category> go </category>
+<function> % Optimum is -1 (Minimum) at x* = [(sqrt(n).^-1)*ones(1,2)] </function>
+<function> n = length(x); </function>
+<function> f = -sqrt(n).^n*prod(x); </function>
+</problem>

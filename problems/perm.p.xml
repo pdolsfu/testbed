@@ -1,0 +1,33 @@
+<problem>
+<name> Perm </name>
+<description> </description>
+<n_variables> 4 </n_variables>
+<n_objectives> </n_objectives>
+<signature> BL </signature>
+<lower_bound> -4*ones(1,4) </lower_bound>
+<upper_bound> 4*ones(1,4) </upper_bound>
+<min_point>  [1 2 3 4]  </min_point>
+<min_value>  0  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The number of variables n: n = 4 </function>
+<function> % Optimization Space is: xj = [-4 4]</function>
+<function> % Optimum is 0 (Minimum) at x* = [1 2 3 4] </function>
+<function> % </function>
+<function> n = 4; </function>
+<function> b = 0.5; </function>
+<function> s_out = 0; </function>
+<function> for k = 1:n; </function>
+<function> s_in = 0; </function>
+<function> for j = 1:n </function>
+<function> s_in = s_in+(j^k+b).*((x(j,:)./j).^k-1); </function>
+<function> end </function>
+<function> s_out = s_out+s_in.^2; </function>
+<function> end </function>
+<function> f = s_out; </function>
+</problem>

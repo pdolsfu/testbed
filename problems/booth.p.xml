@@ -1,0 +1,22 @@
+<problem>
+<name> Booth </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> JC </signature>
+<lower_bound> -10*ones(1,2) </lower_bound>
+<upper_bound> 10*ones(1,2) </upper_bound>
+<min_point>  [1 3]  </min_point>
+<min_value>  0  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> singlemodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The number of variables n = 2. </function>
+<function> % Optimization Space is: x1,x2 = [-10 10] </function>
+<function> % Optimum is 0 (minimum) at x* = [1 3] </function>
+<function> f  = (x(1,:)+2*x(2,:)-7).^2+(2*x(1,:)+x(2,:)-5).^2; </function>
+</problem>

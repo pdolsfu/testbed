@@ -1,0 +1,21 @@
+<template>
+<line> function [c_list, ceq_list] = confun(x_list) </line>
+<line> % Generated constraint function testbed system </line>
+<line>  </line>
+<line> for x_list_cnt = size(x_list, 2):-1:1 </line>
+<line> x = x_list(:,x_list_cnt); </line>
+<line> % calculations </line>
+<line> <content> </content> </line>
+<line>  </line>
+<line> % logging </line>
+<line> dman( ctg.option_log, ctg.id_con_t, ones(1,size(x,2))* ... </line>
+<line>     toc( uint64( dman( ctg.option_harvest, ctg.id_con_tic)))); </line>
+<line> dman( ctg.option_log, ctg.id_con_c, c); </line>
+<line> dman( ctg.option_log, ctg.id_con_ceq, ceq); </line>
+<line> dman( ctg.option_log, ctg.id_con_x, x); </line>
+<line> </line>
+<line> if isempty( c); c_list = []; else c_list(:,x_list_cnt) = c; end </line>
+<line> if isempty( ceq); ceq_list = []; else ceq_list(:,x_list_cnt) = ceq; end </line>
+<line> end </line>
+<line> end </line>
+</template>

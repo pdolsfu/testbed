@@ -1,0 +1,20 @@
+<problem>
+<name> TF2 </name>
+<description> </description>
+<n_variables> 3 </n_variables>
+<n_objectives> 3 </n_objectives>
+<signature> LH </signature>
+<lower_bound> [-3 -3 -3] </lower_bound>
+<upper_bound> [3 3 3] </upper_bound>
+<min_point> </min_point>
+<min_value> </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> multimodal </category>
+<category> smallscale </category>
+<category> moo </category>
+<function> f1=0.5*(x(1,:).^2+x(2,:).^2)+sin(x(1,:).^2+x(2,:).^2); </function>
+<function> f2=(1/8)*((3*x(1,:)-2*x(2,:)+4).^2)+((1/27)*(x(1,:)-x(2,:)+1).^2)+15; </function>
+<function> f3=1./((x(1,:).^2)+(x(2,:).^2)+1)-1.1*(exp(-x(1,:).^2-x(2,:).^2)); </function>
+<function> f=[f1' f2' f3']; </function>
+</problem>

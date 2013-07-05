@@ -1,0 +1,19 @@
+<problem>
+<name> TF1 </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> 2 </n_objectives>
+<signature> GE </signature>
+<lower_bound> 0 0 </lower_bound>
+<upper_bound> 10 10 </upper_bound>
+<constraint> c=[(1/6)*x(1,:)+x(2,:)-(13/2); (1/2)*x(1,:)+x(2,:)-(15/2); 5*x(1,:)+x(2,:)-30]; </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> constrained </category>
+<category> smallscale </category>
+<category> moo </category>
+<function> f1=-x(1,:).^2+x(2,:); </function>
+<function> f2=0.5*x(1,:)+x(2,:)+1 </function>
+<function> f=[f1' f2']; </function>
+</problem>

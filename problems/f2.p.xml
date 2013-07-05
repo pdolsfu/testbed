@@ -1,0 +1,30 @@
+<problem>
+<name> F2 </name>
+<description> </description>
+<n_variables> 10 </n_variables>
+<n_objectives> </n_objectives>
+<signature> D4 </signature>
+<lower_bound> 0*ones(1,10) </lower_bound>
+<upper_bound> 1*ones(1,10) </upper_bound>
+<min_point>  [0.4*ones(1,10)]  </min_point>
+<min_value>  2  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> largescale </category>
+<category> go </category>
+<function> % The default value of n = 10. </function>
+<function> % Optimization space is xi = [0 1], i = 1..10 </function>
+<function> % Optimum is 2 (minimum) at x* = [0.4*ones(1,10)] </function>
+<function> % </function>
+<function> n = 10; </function>
+<function> a = 0.05; </function>
+<function> s1 = 0 ;</function>
+<function> for i = 1:n; </function>
+<function> s2 = min([abs(x(i)-0.2)+a*abs(x(i)-0.4)], [abs(x(i)-0.7)+a]); </function>
+<function> s1 = s1 + s2; </function>
+<function> end </function>
+<function> f = s1; </function>
+</problem>

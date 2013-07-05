@@ -1,0 +1,28 @@
+<problem>
+<name> ENGAPP3 </name>
+<description> </description>
+<n_variables> 4 </n_variables>
+<n_objectives> </n_objectives>
+<signature> GW </signature>
+<lower_bound> [1 1 10 10] </lower_bound>
+<upper_bound> [99 99 200 200] </upper_bound>
+<min_point>  [0.812500 0.437500 42.097398 176.654047]  </min_point>
+<min_value>  6059.946341  </min_value>
+<constraint> % Design of a pressure vessel. n =4, xlv = </constraint>
+<constraint> % [1 1 10 10], xuv=[99 99 200 200] </constraint>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c=[.0193*x(3)-x(1);.00954*x(3)-x(2);1.296e6-pi*x(3).^2*x(4)-4/3*pi*x(3).^3; x(4) - 240]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % design of a pressure vessel. n =4, xlv = </function>
+<function> % [1 1 10 10], [99 99 200 200] </function>
+<function> % Optimum is 6059.946341 (Minimum) with x* = [0.812500 0.437500 42.097398 176.654047] </function>
+<function> f=.6224*x(1,:).*x(3,:).*x(4,:)+1.7781*x(2,:).*x(3,:).^2+3.1661*x(1,:).^2.*x(4,:)+19.84*x(1,:).^2.*x(3,:); </function>
+</problem>

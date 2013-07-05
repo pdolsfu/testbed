@@ -1,0 +1,23 @@
+<problem>
+<name> Colville </name>
+<description> </description>
+<n_variables> 4 </n_variables>
+<n_objectives> </n_objectives>
+<signature> MG </signature>
+<lower_bound> -10*ones(1,4) </lower_bound>
+<upper_bound> 10*ones(1,4) </upper_bound>
+<min_point>  [1 1 1 1]  </min_point>
+<min_value>  0  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % The number of variables n = 4. </function>
+<function> % Optimization Space: x1,x2,x3,x4 = [-10 10]</function>
+<function> % Optimum is 0 (Minimum) at x* = [1 1 1 1] </function>
+<function> f  = 100.*(x(2,:).^2-x(1,:)).^2+(x(1,:)-1).^2+(x(3,:)-1).^2+90.*(x(3,:).^2-x(4,:)).^2+... </function>
+<function> 10.1.*((x(2,:)-1).^2+(x(4,:)-1).^2)+19.8.*(x(2,:)-1).*(x(4,:)-1); </function>
+</problem>

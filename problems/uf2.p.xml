@@ -1,0 +1,33 @@
+<problem>
+<name> UF2 </name>
+<description> </description>
+<n_variables> 3 </n_variables>
+<n_objectives> 2 </n_objectives>
+<signature> FD </signature>
+<lower_bound> [0 -1 -1] </lower_bound>
+<upper_bound> [1 1 1] </upper_bound>
+<min_point> </min_point>
+<min_value> </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> largescale </category>
+<category> moo </category>
+<function> % n=3, xlv=[0 -1 -1], xuv=[1 1 1] </function>
+<function> % x and f are columnwise, the imput x must be inside the search space and </function>
+<function> % it could be a matrix </function>
+<function> [dim, num]  = size(x); </function>
+<function> X1          = repmat(x(1,:),[dim-1,1]); </function>
+<function> A           = 6*pi*X1 + pi/dim*repmat((2:dim)',[1,num]); </function>
+<function> tmp         = zeros(dim,num); </function>
+<function> tmp(2:dim,:)= (x(2:dim,:) - 0.3*X1.*(X1.*cos(4.0*A)+2.0).*cos(A)).^2; </function>
+<function> tmp1        = sum(tmp(3:2:dim,:));  % odd index </function>
+<function> tmp(2:dim,:)= (x(2:dim,:) - 0.3*X1.*(X1.*cos(4.0*A)+2.0).*sin(A)).^2; </function>
+<function> tmp2        = sum(tmp(2:2:dim,:));  % even index </function>
+<function> f1      = x(1,:)             + 2.0*tmp1/size(3:2:dim,2); </function>
+<function> f2      = 1.0 - sqrt(x(1,:)) + 2.0*tmp2/size(2:2:dim,2); </function>
+<function> f=[f1' f2']; </function>
+<function> clear X1 A tmp; </function>
+</problem>

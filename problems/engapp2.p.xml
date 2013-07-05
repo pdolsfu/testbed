@@ -1,0 +1,34 @@
+<problem>
+<name> ENGAPP2 </name>
+<description> </description>
+<n_variables> 4 </n_variables>
+<n_objectives> </n_objectives>
+<signature> EO </signature>
+<lower_bound> [0.1 0.1 0.1 0.1] </lower_bound>
+<upper_bound> [2 10 10 2] </upper_bound>
+<min_point>  [0.2455 6.1960 8.2730 0.2455]  </min_point>
+<min_value>  2.386  </min_value>
+<constraint> %Welded beam Design </constraint>
+<constraint> P = 6000; L = 14; E = 30e+6; G = 12e+6; </constraint>
+<constraint> t_max = 13600; s_max = 30000; d_max = 0.25; </constraint>
+<constraint> M = P*(L+x(2)/2); R = sqrt(0.25*(x(2)^2+(x(1)+x(3))^2)); </constraint>
+<constraint> J = 2*sqrt(2)*x(1)*x(2)*(x(2)^2/12+0.25*(x(1)+x(3))^2); </constraint>
+<constraint> P_c = (4.013*E/(6*L^2))*x(3)*x(4)^3*(1-0.25*x(3)*sqrt(E/G)/L); </constraint>
+<constraint> t1 = P/(sqrt(2)*x(1)*x(2)); t2 = M*R/J; </constraint>
+<constraint> t = sqrt(t1^2+t1*t2*x(2)/R+t2^2); </constraint>
+<constraint> s = 6*P*L/(x(4)*x(3)^2); </constraint>
+<constraint> d = 4*P*L^3/(E*x(4)*x(3)^3); </constraint>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c=[t-t_max; s-s_max;x(1)-x(4); 0.10471*x(1).^2+0.04811*x(3).*x(4)*(14.0+x(2))-5.0; 0.125 - x(1); d-d_max; P-P_c]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % Optimum is 2.386 (Minimum) at x* = [0.2455 6.1960 8.2730 0.2455] </function>
+<function> f = 1.10471*x(1,:).^2.*x(2,:)+0.04811*x(3,:).*x(4,:).*(14.0+x(2,:)); </function>
+</problem>

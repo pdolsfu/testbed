@@ -1,0 +1,26 @@
+<problem>
+<name> G10 </name>
+<description> </description>
+<n_variables> 8 </n_variables>
+<n_objectives> </n_objectives>
+<signature> MI </signature>
+<lower_bound> 10*[10 100 100 1 1 1 1 1] </lower_bound>
+<upper_bound> 1000*[10 10 10 1 1 1 1 1] </upper_bound>
+<min_point>  [579.3167 1359.943 5110.071 182.0174 295.5985 217.9799 286.4162 395.5979]  </min_point>
+<min_value>  7049.3307  </min_value>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c=[ -1+0.0025*(x(4)+x(6)); -1+0.0025*(-x(4)+x(5)+x(7)); -1+0.01*(-x(5)+x(8));... </constraint>
+<constraint> 100*x(1)-x(1)*x(6)+833.33252*x(4)-83333.333; x(2)*x(4)-x(2)*x(7)-1250*x(4)+1250*x(5);... </constraint>
+<constraint> x(3)*x(5)-x(3)*x(8)-2500*x(5)+1250000]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> largescale </category>
+<category> go </category>
+<function> % Optimum is 7049.3307 (Minimum) at x* = [579.3167 1359.943 5110.071 182.0174 295.5985 217.9799 286.4162 395.5979] </function>
+<function> f=x(1,:)+x(2,:)+x(3,:); </function>
+</problem>

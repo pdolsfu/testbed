@@ -1,0 +1,24 @@
+<problem>
+<name> G6 </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> 3O </signature>
+<lower_bound> [13 0] </lower_bound>
+<upper_bound> [100 100] </upper_bound>
+<min_point>  [14.095 0.84296]  </min_point>
+<min_value>  -6961.81388  </min_value>
+<constraint> % nonlinear inequality constraints </constraint>
+<constraint> c=[(x(1)-5).^2+(x(2)-5).^2+100; (x(1)-6).^2+(x(2)-5).^2-82.81]; </constraint>
+<constraint> % nonlinear equality constraints </constraint>
+<constraint> ceq=[]; </constraint>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> constrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % Optimum is -6961.81388 (Minimum) at x* = [14.095 0.84296] </function>
+<function> f = (x(1,:)-10).^3+(x(2,:)-20).^3; </function>
+</problem>

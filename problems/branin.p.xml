@@ -1,0 +1,23 @@
+<problem>
+<name> Branin </name>
+<description> </description>
+<n_variables> 2 </n_variables>
+<n_objectives> </n_objectives>
+<signature> S5 </signature>
+<lower_bound> -5*ones(1,2) </lower_bound>
+<upper_bound> 10*ones(1,2) </upper_bound>
+<min_point>  [-pi, 12.275] </min_point>
+<min_value>  0.397887  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> smallscale </category>
+<category> go </category>
+<function> % Optimization Space: xl=[-5 10], x2 = [0 15] </function>
+<function> % Optimum is 0.397887 (Minimum) at x* = [-pi, 12.275], [pi, 12.275], [9.42478, 2.475] </function>
+<function> % The number of variables n = 2. </function>
+<function> pi=3.1415926; </function>
+<function> f = (x(2,:)-(5.1/(4*pi.^2))*x(1,:)^2+5*x(1,:)/pi-6)^2+10*(1-1/(8*pi))*cos(x(1,:))+10; </function>
+</problem>

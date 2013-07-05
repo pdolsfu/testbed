@@ -1,0 +1,48 @@
+<problem>
+<name> Hartmann H16 </name>
+<description> </description>
+<n_variables> 16 </n_variables>
+<n_objectives> </n_objectives>
+<signature> NQ </signature>
+<lower_bound> -1*ones(1,16) </lower_bound>
+<upper_bound> 1*ones(1,16) </upper_bound>
+<min_point>  Inf*ones(1,16)  </min_point>
+<min_value>  25.875  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> nonsymmetric </category>
+<category> multimodal </category>
+<category> unconstrained </category>
+<category> largescale </category>
+<category> go </category>
+<function> % The number of variables n = 16. </function>
+<function> % Optimization Space is: xj = [-1 1], j = 1..16 </function>
+<function> % Optimum is 25.875 (Minimum) at x* =[unknown] </function>
+<function> % Note: x must be a column vector </function>
+<function> % n=16, x=[-1 0], optimum is 25.875 </function>
+<function> %(16, [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1],[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]) </function>
+<function> %(16, [-1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1],[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]) </function>
+
+<function> a=[ 1 0 0 1 0 0 1 1 0 0 0 0 0 0 0 1 </function>
+<function> 0 1 1 0 0 0 1 0 0 1 0 0 0 0 0 0 </function>
+<function> 0 0 1 0 0 0 1 0 1 1 0 0 0 1 0 0 </function>
+<function> 0 0 0 1 0 0 1 0 0 0 1 0 0 0 1 0 </function>
+<function> 0 0 0 0 1 1 0 0 0 1 0 1 0 0 0 1 </function>
+<function> 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 </function>
+<function> 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 </function>
+<function> 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 </function>
+<function> 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 </function>
+<function> 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 </function>
+<function> 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 </function>
+<function> 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 </function>
+<function> 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 </function>
+<function> 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 </function>
+<function> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 </function>
+<function> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1]; </function>
+<function> f=0; </function>
+<function> for i=1:16 </function>
+<function> for j=1:16 </function>
+<function> f=f+a(i,j)*(x(i,:).^2+x(i,:)+1) .* (x(j,:).^2+x(j,:)+1); </function>
+<function> end </function>
+<function> end </function>
+</problem>

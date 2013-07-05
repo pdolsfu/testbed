@@ -1,0 +1,31 @@
+<problem>
+<name> Trid6 </name>
+<description> </description>
+<n_variables> 6 </n_variables>
+<n_objectives> </n_objectives>
+<signature> A1 </signature>
+<lower_bound> -36*ones(1,6) </lower_bound>
+<upper_bound> 36*ones(1,6) </upper_bound>
+<min_point>  [6 10 12 12 10 6]  </min_point>
+<min_value>  -50  </min_value>
+<category> continuous </category>
+<category> nonlinear </category>
+<category> symmetric </category>
+<category> singlemodal </category>
+<category> unconstrained </category>
+<category> largescale </category>
+<category> go </category>
+<function> % The number of variables n: n = 6 </function>
+<function> % Optimization Space: xj = [-36 36]</function>
+<function> % Optimum is -50 (Minimum) at x* = [6 10 12 12 10 6] </function>
+<function> n = 6; </function>
+<function> s1 = 0; </function>
+<function> s2 = 0; </function>
+<function> for j = 1:n; </function>
+<function> s1 = s1+(x(j,:)-1).^2; </function>
+<function> end </function>
+<function> for j = 2:n; </function>
+<function> s2 = s2+x(j,:).*x(j-1); </function>
+<function> end </function>
+<function> f = s1-s2; </function>
+</problem>
