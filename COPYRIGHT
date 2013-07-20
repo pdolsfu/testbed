@@ -32,5 +32,3 @@ The files in "histNorm" folder is a separate utility package developed by Travis
 The files in "xticklabel_rotate" folder is a separate utility package developed by Brian FG Kats and released under BSD. PDOL Optimization Testbed makes use of it with minor modification as a plotter beautifier utility and PDOL acknowledges Brian FG Kats for the support
 
 The files in "boxplotCsub" folder is a separate utility package developed by Brian FG Kats and released under BSD. PDOL Optimization Testbed makes use of it unmodified as a box plotter utility and PDOL acknowledges Brian FG Kats for the support
-
-The files in "MPS" folder is a seperate package developed by PDOL. PDOL Optimization Testbed makes use of it unmodified as an example algorithm for benchmarking for demonstrative purposes. The MPS package distributed in PDOL Optimization Testbed retains its own copyright, license and terms of use.

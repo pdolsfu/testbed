@@ -331,6 +331,7 @@ disp( '*                                     *')
 disp( '* DEMO FOR TESTBED SYSTEM: MODULE _5_ *')
 disp( '*  Custom algorithm to be tested      *')
 disp( '*  Here we use MPS as am example      *')
+disp( '*  MPS can be found on PDOL website   *')
 disp( '*                                     *')
 disp( '***************************************')
 disp( 'Press enter to continue');
@@ -381,9 +382,13 @@ pause;
 disp( '5.7 Call testbed to benchmark MPS with hump');
 disp( '>> testbed( @fminunctent, ''hump'', options)');
 pause;
-testbed( @fminunctent, 'hump', options)
-disp( 'Results are saved to testbed_output/, a few histograms are produced');
-disp( 'and statistical results are printed as well');
+if which( 'fminunctent')
+    testbed( @fminunctent, 'hump', options)
+    disp( 'Results are saved to testbed_output/, a few histograms are produced');
+    disp( 'and statistical results are printed as well');
+else
+    disp( 'MPS not found, please download at PDOL website, and put in testbed folder');
+end
 disp( ' ');
 disp( '**************** NEXT *****************');
 pause;
