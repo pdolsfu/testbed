@@ -74,6 +74,11 @@ function output = dman( task, id, data, options)
 persistent activated;
 persistent recorder;
 
+% id must be double
+if nargin >= 2
+    id = double(id);
+end
+
 % activation control, default deactivated, activate it only when testbed
 % has set up the recorder channels
 if task == ctg.option_activate
